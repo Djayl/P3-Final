@@ -8,3 +8,7 @@
 
 import Foundation
 
+let game = Game()
+
+game.runGame()
+
