@@ -102,8 +102,9 @@ class Character {
         if comrade.life > 0 {
             comrade.life += weapon.cure
             print("\(name) guéris \(comrade.name), son niveau de vie est de \(comrade.life) points.")
-        } else if comrade.life <= 0{
-            print("Vous êtes mort, je ne peux pas vous réanimer.")
+        } else if comrade.life == comrade.initialLife {
+            comrade.life += weapon.cure
+            print("\(name) augmente le niveau de vie de \(comrade.name)")
         }
     }
     
