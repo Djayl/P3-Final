@@ -158,7 +158,7 @@ class Player {
         
         for i in 0..<team.count {
             if team[i].life > 0 {
-                print("\(i+1). \(team[i].name), type: \(team[i].type.rawValue), niveau de vie: \(team[i].life), puissance d'attaque: \(team[i].weapon.damage), niveau de guérison: \(team[i].weapon.cure)")
+                print("\(i+1). \(team[i].name), type: \(team[i].type.rawValue), niveau de vie: \(team[i].life), puissance d'attaque: \(team[i].weapon.damage), capacité de guérison: \(team[i].weapon.cure)")
                 
             }
         }

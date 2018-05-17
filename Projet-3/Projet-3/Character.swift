@@ -99,12 +99,13 @@ class Character {
     // This method is reserved for the magus, so that he can heal his comrades
     
     func Healing(comrade: Character) {
-        if comrade.life > 0 {
+        if comrade.life > 0 && comrade.life < comrade.initialLife{
             comrade.life += weapon.cure
             print("\(name) guéris \(comrade.name), son niveau de vie est de \(comrade.life) points.")
-        } else if comrade.life == comrade.initialLife {
+        }
+        if comrade.life == comrade.initialLife || comrade.life > comrade.initialLife {
             comrade.life += weapon.cure
-            print("\(name) augmente le niveau de vie de \(comrade.name)")
+            print("\(name) augmente le niveau de vie de \(comrade.name), il a désormais : \(comrade.life) points de vie.")
         }
     }
     

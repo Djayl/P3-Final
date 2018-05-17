@@ -61,17 +61,6 @@ class Game {
         }
     }
     
-    // This is the method that checks whether the health points of all the characters of the same team is at the maximum or not
-    
-    func checkIfMyTeamIsAtMaxLife (for player: Player, in team: [Character]) {
-        
-        if assailant?.type == CharacterType.Magus && team[0].life >= team[0].initialLife && team[1].life >= team[1].initialLife && team[2].life >= team[2].initialLife {
-            repeat {
-                print("Tes personnages sont tous au niveau de vie maximum, choisis plutôt un autre personnage:")
-                assailant = player.selectCharacter(in: team)
-            } while assailant?.type == CharacterType.Magus
-        }
-    }
     
     // This is the method that checks certain conditions before a healing of the magus
     
@@ -118,11 +107,12 @@ class Game {
                 
                 // It checks, if the selected character is a magus, that his comrades do not have the maximum of health points
                 
-                checkIfMyTeamIsAtMaxLife(for: player1, in: team1)
+                //checkIfMyTeamIsAtMaxLife(for: player1, in: team1)
                 
                 // If the selected character is a magus, then the player choses a comrade to heal
                 
                 if assailant?.type == CharacterType.Magus{
+                    random()
                     print("Choisissez un camarade à guérir:")
                     comrade = player1.selectCharacter(in: team1)
                     
@@ -153,9 +143,10 @@ class Game {
                 print("\(player2.playerName[0]) - Choisissez avec qui vous voulez jouer.")
                 assailant = player2.selectCharacter(in: team2)
                 
-                checkIfMyTeamIsAtMaxLife(for: player2, in: team2)
+                //checkIfMyTeamIsAtMaxLife(for: player2, in: team2)
                 
                 if assailant?.type == CharacterType.Magus {
+                    random()
                     print("\(player2.playerName[0]) - Choisissez un camarade à guérir:")
                     comrade = player2.selectCharacter(in: team2)
                     
