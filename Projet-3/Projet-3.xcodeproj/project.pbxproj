@@ -16,6 +16,8 @@
 		F074643820ADB1FD000674A5 /* Wand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074643720ADB1FD000674A5 /* Wand.swift */; };
 		F074643B20ADB288000674A5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074643A20ADB288000674A5 /* Player.swift */; };
 		F074643D20ADB324000674A5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074643C20ADB324000674A5 /* Game.swift */; };
+		F074643F20ADB3BA000674A5 /* NewWeaponAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074643E20ADB3BA000674A5 /* NewWeaponAttack.swift */; };
+		F074644120ADB416000674A5 /* NewWeaponCure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074644020ADB416000674A5 /* NewWeaponCure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +43,8 @@
 		F074643720ADB1FD000674A5 /* Wand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wand.swift; sourceTree = "<group>"; };
 		F074643A20ADB288000674A5 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F074643C20ADB324000674A5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		F074643E20ADB3BA000674A5 /* NewWeaponAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWeaponAttack.swift; sourceTree = "<group>"; };
+		F074644020ADB416000674A5 /* NewWeaponCure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWeaponCure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +94,18 @@
 				F074643320ADB110000674A5 /* Mace.swift */,
 				F074643520ADB1A3000674A5 /* Sword.swift */,
 				F074643720ADB1FD000674A5 /* Wand.swift */,
+				F074644220ADB42D000674A5 /* Chest */,
 			);
 			path = Weapon;
+			sourceTree = "<group>";
+		};
+		F074644220ADB42D000674A5 /* Chest */ = {
+			isa = PBXGroup;
+			children = (
+				F074643E20ADB3BA000674A5 /* NewWeaponAttack.swift */,
+				F074644020ADB416000674A5 /* NewWeaponCure.swift */,
+			);
+			path = Chest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,12 +168,14 @@
 				F074643220ADB09C000674A5 /* Ax.swift in Sources */,
 				F074643D20ADB324000674A5 /* Game.swift in Sources */,
 				F074642720ADAD8F000674A5 /* main.swift in Sources */,
+				F074644120ADB416000674A5 /* NewWeaponCure.swift in Sources */,
 				F074642E20ADAF2E000674A5 /* Character.swift in Sources */,
 				F074643820ADB1FD000674A5 /* Wand.swift in Sources */,
 				F074643B20ADB288000674A5 /* Player.swift in Sources */,
 				F074643420ADB110000674A5 /* Mace.swift in Sources */,
 				F074643020ADB027000674A5 /* Weapon.swift in Sources */,
 				F074643620ADB1A3000674A5 /* Sword.swift in Sources */,
+				F074643F20ADB3BA000674A5 /* NewWeaponAttack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
