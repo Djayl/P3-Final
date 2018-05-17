@@ -10,6 +10,7 @@
 		F074642720ADAD8F000674A5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074642620ADAD8F000674A5 /* main.swift */; };
 		F074642E20ADAF2E000674A5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074642D20ADAF2E000674A5 /* Character.swift */; };
 		F074643020ADB027000674A5 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074642F20ADB027000674A5 /* Weapon.swift */; };
+		F074643220ADB09C000674A5 /* Ax.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074643120ADB09C000674A5 /* Ax.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		F074642620ADAD8F000674A5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F074642D20ADAF2E000674A5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		F074642F20ADB027000674A5 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		F074643120ADB09C000674A5 /* Ax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ax.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				F074642620ADAD8F000674A5 /* main.swift */,
 				F074642D20ADAF2E000674A5 /* Character.swift */,
 				F074642F20ADB027000674A5 /* Weapon.swift */,
+				F074643120ADB09C000674A5 /* Ax.swift */,
 			);
 			path = "Projet-3";
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F074643220ADB09C000674A5 /* Ax.swift in Sources */,
 				F074642720ADAD8F000674A5 /* main.swift in Sources */,
 				F074642E20ADAF2E000674A5 /* Character.swift in Sources */,
 				F074643020ADB027000674A5 /* Weapon.swift in Sources */,
