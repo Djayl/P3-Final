@@ -50,7 +50,7 @@ class Game {
         let randomNumber = Int(arc4random_uniform(2))
         if randomNumber == 1 {
             
-            if assailant?.type != CharacterType.Spectrum {
+            if assailant?.type != CharacterType.Spectrum && assailant?.weapon.damage != assailant?.chest.damage {
                 assailant?.weapon = (assailant?.chest)!
                 if assailant?.type != CharacterType.Magus {
                     print("Félicitations \(String(describing: assailant?.name)), vous recevez le coffre de la gloire! Il contient l'arme de la destruction. Votre adversaire n'a aucune chance!")
