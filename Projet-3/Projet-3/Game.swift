@@ -77,7 +77,7 @@ class Game {
     
     func checkBeforeCure (for player: Player, in team: [Character]) {
         
-        if (assailant?.type == CharacterType.Magus && comrade?.name == assailant?.name) || (assailant?.type == CharacterType.Magus && comrade?.life == comrade?.initialLife) {
+        if (assailant?.type == CharacterType.Magus && comrade?.name == assailant?.name) {
             
             repeat{
                 if comrade?.type == CharacterType.Magus {
@@ -85,24 +85,18 @@ class Game {
                     print("Choisis qui tu veux guérir:")
                     comrade = player.selectCharacter(in: team)
                 }
-                if comrade?.type != CharacterType.Magus {
-                    print("Ce personnage est à son niveau de vie maximum, tu ne peux pas le guérir.")
-                    print("Choisis qui tu veux guérir:")
-                    comrade = player.selectCharacter(in: team)
-                }
-            } while (assailant?.type == CharacterType.Magus && comrade?.name == assailant?.name) || (assailant?.type == CharacterType.Magus && comrade?.life == comrade?.initialLife)
+                
+            } while (assailant?.type == CharacterType.Magus && comrade?.name == assailant?.name)
         }
         
-        // If all conditions are excluded then the magus heals
+        // If the condition is excluded then the magus heals his comrade
         
-        if (assailant?.type == CharacterType.Magus && (comrade?.life)! < (comrade?.initialLife)!) || (assailant?.type == CharacterType.Magus && comrade?.name != assailant?.name) {
+        if (assailant?.type == CharacterType.Magus && comrade?.name != assailant?.name) {
             assailant?.Healing(comrade: comrade!)
-        } else {
-            print("Choisis un autre personnage avec lequel tu veux jouer: ")
-            assailant = player.selectCharacter(in: team)    }
+        }
     }
     
-    
+    // The method relating to the course of the game
     
     func runGame() {
         
@@ -117,7 +111,7 @@ class Game {
         repeat{
             if team1[0].life > 0 || team1[1].life > 0 || team1[2].life > 0 {
                 
-                print("\(player1.playerName[0]) - Choisis avec qui tu veux jouer.")
+                print("\(player1.playerName[0]) - Choisissez avec qui vous voulez jouer.")
                 // The player choses an assailant
                 
                 assailant = player1.selectCharacter(in: team1)
@@ -129,7 +123,7 @@ class Game {
                 // If the selected character is a magus, then the player choses a comrade to heal
                 
                 if assailant?.type == CharacterType.Magus{
-                    print("Choisis un camarade à guérir:")
+                    print("Choisissez un camarade à guérir:")
                     comrade = player1.selectCharacter(in: team1)
                     
                     checkBeforeCure(for: player1, in: team1)
@@ -139,7 +133,7 @@ class Game {
                     // If the selected character is not a magus, then the player choses an opponent to fight
                     
                     random()
-                    print("\(player1.playerName[0]) - Choisis celui que tu veux attaquer:")
+                    print("\(player1.playerName[0]) - Choisissez celui que vous souhaitez attaquer:")
                     opponent = player1.selectCharacter(in: team2)
                     fight()
                 }
@@ -156,20 +150,20 @@ class Game {
             
             
             if team2[0].life > 0 || team2[1].life > 0 || team2[2].life > 0 {
-                print("\(player2.playerName[0]) - Choisis avec qui tu veux jouer.")
+                print("\(player2.playerName[0]) - Choisissez avec qui vous voulez jouer.")
                 assailant = player2.selectCharacter(in: team2)
                 
                 checkIfMyTeamIsAtMaxLife(for: player2, in: team2)
                 
                 if assailant?.type == CharacterType.Magus {
-                    print("\(player2.playerName[0]) - Choisis un camarade à guérir:")
+                    print("\(player2.playerName[0]) - Choisissez un camarade à guérir:")
                     comrade = player2.selectCharacter(in: team2)
                     
                     checkBeforeCure(for: player2, in: team2)
                     
                 } else {
                     random()
-                    print("\(player2.playerName[0]) - Choisis celui que tu veux attaquer:")
+                    print("\(player2.playerName[0]) - Choisissez celui que vous souhaitez attaquer:")
                     opponent = player2.selectCharacter(in: team1)
                     fight()
                 }

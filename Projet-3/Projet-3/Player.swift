@@ -141,7 +141,7 @@ class Player {
                 print("\(playerName[0]) - Choisissez un autre personnage:")
             }
             
-            print(team)
+          
             
         } while numberOfCharacter < 3
         
