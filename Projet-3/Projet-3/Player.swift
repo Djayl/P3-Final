@@ -145,8 +145,20 @@ class Player {
             
         } while numberOfCharacter < 3
         
+       whatsMyTeam()
+        
         return team
     }
+ 
+    // This method announces the name of the characters and their type
+    
+    func whatsMyTeam() {
+        print("Votre équipe est constituée de:")
+        for i in 0...[team].count + 1{
+            print("\(team[i].name) de type \(team[i].type.rawValue)")
+        }
+    }
+    
     
     // This is the method to choose a character for fighting or healing
     

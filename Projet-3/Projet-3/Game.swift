@@ -44,6 +44,11 @@ class Game {
         assailant?.attack(opponent: opponent!)
     }
     
+    func cure() {
+        
+        assailant?.Healing(comrade: comrade!)
+    }
+    
     // This is the method that makes a chest appear randomly
     
     func random() {
@@ -88,9 +93,6 @@ class Game {
                 
                 assailant = player1.selectCharacter(in: team1)
                 
-                // It checks, if the selected character is a magus, that his comrades do not have the maximum of health points
-                
-                //checkIfMyTeamIsAtMaxLife(for: player1, in: team1)
                 
                 // If the selected character is a magus, then the player choses a comrade to heal
                 
@@ -98,6 +100,7 @@ class Game {
                     random()
                     print("Qui voulez-vous soigner ?")
                     comrade = player1.selectCharacter(in: team1)
+                    cure()
                     
                 } else {
                     
@@ -113,7 +116,7 @@ class Game {
                 
                 // When the health points of all characters is zero, the game ends and the opposing player wins
                 
-                if team1[0].life == 0 && team1[1].life == 0 && team1[2].life == 0 {
+                if team1[0].life <= 0 && team1[1].life <= 0 && team1[2].life <= 0 {
                     print("\(player2.playerName[0]) a gagné")
                     break
                 }
@@ -128,6 +131,7 @@ class Game {
                     random()
                     print("\(player2.playerName[0]) - Qui voulez-vous soigner ?")
                     comrade = player2.selectCharacter(in: team2)
+                    cure()
                   
                 } else {
                     random()
@@ -136,7 +140,7 @@ class Game {
                     fight()
                 }
             } else {
-                if team2[0].life == 0 && team2[1].life == 0 && team2[2].life == 0 {
+                if team2[0].life <= 0 && team2[1].life <= 0 && team2[2].life <= 0 {
                     print("\(player1.playerName[0]) a gagné")
                     break
                 }
