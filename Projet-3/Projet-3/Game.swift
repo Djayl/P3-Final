@@ -11,7 +11,7 @@ import Foundation
 class Game {
     
     
-    var selectedCharacter: Character?
+    var selectedCharacter: Character? //
     var opponent: Character?
     var team : Character?
     var assailant: Character?
@@ -53,41 +53,24 @@ class Game {
             if assailant?.type != CharacterType.Spectrum && assailant?.weapon.damage != assailant?.chest.damage {
                 assailant?.weapon = (assailant?.chest)!
                 if assailant?.type != CharacterType.Magus {
-                    print("Félicitations \(String(describing: assailant?.name)), vous recevez le coffre de la gloire! Il contient l'arme de la destruction. Votre adversaire n'a aucune chance!")
+                    if let name = assailant?.name {
+                    print("Félicitations \(name), vous recevez le coffre de la gloire! Il contient l'arme de la destruction. Votre adversaire n'a aucune chance!")
+                    }
                 } else {
-                    print("Félicitations, le coffre de la gloire offre à votre Mage une baguette plus puissante, son pouvoir de guérison est multiplié.")
+                    if let name = assailant?.name {
+                    print("Félicitations \(name), le coffre de la gloire vous offre une baguette plus puissante, votre pouvoir de guérison est multiplié.")
+                    }
                 }
             }
         }
     }
     
     
-    // This is the method that checks certain conditions before a healing of the magus
-    
-    func checkBeforeCure (for player: Player, in team: [Character]) {
-        
-        if (assailant?.type == CharacterType.Magus && comrade?.name == assailant?.name) {
-            
-            repeat{
-                if comrade?.type == CharacterType.Magus {
-                    print("Tu ne peux pas te guérir toi-même.")
-                    print("Choisis qui tu veux guérir:")
-                    comrade = player.selectCharacter(in: team)
-                }
-                
-            } while (assailant?.type == CharacterType.Magus && comrade?.name == assailant?.name)
-        }
-        
-        // If the condition is excluded then the magus heals his comrade
-        
-        if (assailant?.type == CharacterType.Magus && comrade?.name != assailant?.name) {
-            assailant?.Healing(comrade: comrade!)
-        }
-    }
-    
     // The method relating to the course of the game
     
     func runGame() {
+        
+        // Two players are created
         
         let player1 = Player()
         let player2 = Player()
@@ -113,10 +96,8 @@ class Game {
                 
                 if assailant?.type == CharacterType.Magus{
                     random()
-                    print("Choisissez un camarade à guérir:")
+                    print("Qui voulez-vous soigner ?")
                     comrade = player1.selectCharacter(in: team1)
-                    
-                    checkBeforeCure(for: player1, in: team1)
                     
                 } else {
                     
@@ -143,15 +124,11 @@ class Game {
                 print("\(player2.playerName[0]) - Choisissez avec qui vous voulez jouer.")
                 assailant = player2.selectCharacter(in: team2)
                 
-                //checkIfMyTeamIsAtMaxLife(for: player2, in: team2)
-                
                 if assailant?.type == CharacterType.Magus {
                     random()
-                    print("\(player2.playerName[0]) - Choisissez un camarade à guérir:")
+                    print("\(player2.playerName[0]) - Qui voulez-vous soigner ?")
                     comrade = player2.selectCharacter(in: team2)
-                    
-                    checkBeforeCure(for: player2, in: team2)
-                    
+                  
                 } else {
                     random()
                     print("\(player2.playerName[0]) - Choisissez celui que vous souhaitez attaquer:")

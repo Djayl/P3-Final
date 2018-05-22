@@ -107,6 +107,7 @@ class Character {
             comrade.life += weapon.cure
             print("\(name) augmente le niveau de vie de \(comrade.name), il a désormais : \(comrade.life) points de vie.")
         }
+
     }
     
 }
