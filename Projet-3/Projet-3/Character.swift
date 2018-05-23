@@ -19,13 +19,14 @@ enum CharacterType : String {
     
 }
 
+// This class contains the methods and properties of the characters 
+
 class Character {
     
-    
-    var type: CharacterType
-    var weapon: Weapon
-    var life: Int
-    var name: String
+    var type: CharacterType // The type of each character (dwarf, magus, colossus, fighter and spectrum)
+    var weapon: Weapon // The weapon used by the character to attack or heal (ax, mace...)
+    var life: Int // The health points of the character
+    var name: String // The name of the character
     var chest: Weapon // The chest contains the new weapon which appears randomly thanks to the method Random in the Game Class
     var initialLife: Int // This property is necessary for some magus methods in the Game class
     
@@ -76,7 +77,7 @@ class Character {
             
             // To avoid having a negative health points we add this condition
             
-            if opponent.life < 0 {
+            if opponent.life <= 0 {
                 opponent.life = 0
                 print("\(opponent.name) est mort.")
             }
@@ -89,7 +90,7 @@ class Character {
         if type == .Spectrum {
             opponent.life -= weapon.damage
             life = 0
-            if opponent.life < 0 {
+            if opponent.life <= 0 {
                 opponent.life = 0
             }
             print("Votre spectre a foudroyé \(opponent.name). \(opponent.name) est mort et \(name) s'en est allé.")
@@ -99,19 +100,23 @@ class Character {
     // This method is reserved for the magus, so that he can heal his comrades
     
     func Healing(comrade: Character) {
-        if comrade.life > 0 && comrade.life < comrade.initialLife && name != comrade.name{
+        if comrade.life > 0 && comrade.life < comrade.initialLife{
             comrade.life += weapon.cure
-            print("\(name) guéris \(comrade.name), son niveau de vie est de \(comrade.life) points.")
+            if name != comrade.name {
+            print("\(name) soigne \(comrade.name), son niveau de vie est de \(comrade.life) points.")
+            } else {
+            print("\(name) se soigne lui même, son niveau de vie est de \(life) points")
+            }
         }
         if comrade.life == comrade.initialLife || comrade.life > comrade.initialLife {
             comrade.life += weapon.cure
+            if name != comrade.name {
             print("\(name) augmente le niveau de vie de \(comrade.name), il a désormais : \(comrade.life) points de vie.")
+            } else {
+            print("\(name) augmente son niveau de vie, il a désormais: \(life) points de vie")
+            }
         }
-        if name == comrade.name {
-            comrade.life += weapon.cure
-            print("\(name) se soigne lui-même, son niveau de vie est de \(life) points.")
-        }
-
+    
     }
     
 }

@@ -8,12 +8,14 @@
 
 import Foundation
 
+// This class contains the methods and properties of the players
+
 class Player {
-    var playerName: [String] = []
-    var team: [Character] = []
-    var teamName: [String] = []
-    var numberOfCharacter = 0
-    var selectedCharacter: Character?
+    var playerName: [String] = [] // The name the player will have chosen for himself
+    var team: [Character] = [] // The team the player will have created for himself
+    var teamName: [String] = [] // The name with which the player will have named his team
+    var numberOfCharacter = 0 // This property is necessary for the method relating to the choice of characters and the creation of the team
+    var selectedCharacter: Character? // The selected character is the one chosen fot the running of the game, fighting or healing
     
     
     // The player names himself
@@ -38,7 +40,7 @@ class Player {
     // The player creates his team, choosing three characters in a list of five types of characters
     
     func createTeam () -> [Character]  {
-        let characterType = ["combattant", "nain", "colosse", "mage", "Spectre"]
+        let characterType = ["combattant", "nain", "colosse", "mage", "Spectre"] // This property is used to enumerate the type of the characters before the player makes his choice
         var numberOfCharacter = 0
         
         
@@ -171,7 +173,6 @@ class Player {
         for i in 0..<team.count {
             if team[i].life > 0 {
                 print("\(i+1). \(team[i].name), type: \(team[i].type.rawValue), niveau de vie: \(team[i].life), puissance d'attaque: \(team[i].weapon.damage), capacité de guérison: \(team[i].weapon.cure)")
-                
             }
         }
         repeat{
@@ -186,7 +187,6 @@ class Player {
                     }
                 }
             }
-            
         } while validChoice == false
         
         return selectedCharacter!

@@ -8,17 +8,18 @@
 
 import Foundation
 
+// This class contains the methods and properties for the running of the game
+
 class Game {
     
-    
-    var selectedCharacter: Character? //
-    var opponent: Character?
-    var team : Character?
-    var assailant: Character?
-    var comrade: Character?
-    var team1: [Character] = []
-    var team2: [Character] = []
-    static var names = [String]()
+    var selectedCharacter: Character? // The selected character is the one chosen fot the running of the game, fighting or healing
+    var opponent: Character? // The opponent is the one we're fighting
+    var team : Character? // The team the player will have created for himself
+    var assailant: Character? // The assailant is the one who is chosen to attack or heal
+    var comrade: Character? // The comrade is the one who is cured
+    var team1: [Character] = [] // This is the player 1's team
+    var team2: [Character] = [] // This is the player 2's team
+    static var names = [String]() // The names chosen by the players
     
     // This method checks whether the name is unique or not
     
@@ -27,7 +28,7 @@ class Game {
         for chosenName in names {
             if chosenName.capitalized == name.capitalized {
                 unique = false
-                print("Ce nom est déjà pris, choisis-en un autre.")
+                print("Ce nom est déjà pris, choisissez-en un autre.")
                 break
             }
         }
@@ -43,6 +44,8 @@ class Game {
         
         assailant?.attack(opponent: opponent!)
     }
+    
+    // This is the cure method, after a comrade has been chosen
     
     func cure() {
         
