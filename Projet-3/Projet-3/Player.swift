@@ -150,7 +150,7 @@ class Player {
         return team
     }
  
-    // This method announces the name of the characters and their type
+    // This method summarizes the character's name and their type
     
     func whatsMyTeam() {
         print("Votre équipe est constituée de:")
