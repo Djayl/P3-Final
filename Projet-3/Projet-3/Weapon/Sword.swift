@@ -10,7 +10,7 @@ import Foundation
 
 // The sword is the weapon of the fighter
 
-class Sword: Weapon{
+internal class Sword: Weapon{
     init() {
         super.init(damage: 10, cure: 0)
     }

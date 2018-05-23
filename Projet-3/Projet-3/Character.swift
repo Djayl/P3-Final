@@ -10,7 +10,7 @@ import Foundation
 
 // Enumeration for the type of the characters
 
-enum CharacterType : String {
+internal enum CharacterType : String {
     case Dwarf = "Nain"
     case Colossus = "Colosse"
     case Magus = "Mage"
@@ -21,7 +21,7 @@ enum CharacterType : String {
 
 // This class contains the methods and properties of the characters 
 
-class Character {
+internal class Character {
     
     var type: CharacterType // The type of each character (dwarf, magus, colossus, fighter and spectrum)
     var weapon: Weapon // The weapon used by the character to attack or heal (ax, mace...)
@@ -71,7 +71,7 @@ class Character {
     
     // The attack method, one for all the characters except the magus
     
-    func attack(opponent: Character){
+    internal func attack(opponent: Character){
         if type != .Spectrum {
             opponent.life -= weapon.damage
             
@@ -99,7 +99,7 @@ class Character {
     
     // This method is reserved for the magus, so that he can heal his comrades
     
-    func Healing(comrade: Character) {
+    internal func Healing(comrade: Character) {
         if comrade.life > 0 && comrade.life < comrade.initialLife{
             comrade.life += weapon.cure
             if name != comrade.name {

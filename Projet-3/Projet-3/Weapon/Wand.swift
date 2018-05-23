@@ -10,7 +10,7 @@ import Foundation
 
 // The wand is the weapon of the magus
 
-class Wand: Weapon{
+internal class Wand: Weapon{
     init() {
         super.init(damage: 0, cure : 10)
     }

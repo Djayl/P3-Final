@@ -10,7 +10,7 @@ import Foundation
 
 // This class contains the methods and properties for the running of the game
 
-class Game {
+internal class Game {
     
     var selectedCharacter: Character? // The selected character is the one chosen fot the running of the game, fighting or healing
     var opponent: Character? // The opponent is the one we're fighting
@@ -40,21 +40,21 @@ class Game {
     
     // This is the combat method, after an assailant has been chosen
     
-    func fight() {
+    fileprivate func fight() {
         
         assailant?.attack(opponent: opponent!)
     }
     
     // This is the cure method, after a comrade has been chosen
     
-    func cure() {
+    fileprivate func cure() {
         
         assailant?.Healing(comrade: comrade!)
     }
     
     // This is the method that makes a chest appear randomly
     
-    func random() {
+    fileprivate func random() {
         let randomNumber = Int(arc4random_uniform(2))
         if randomNumber == 1 {
             
@@ -76,12 +76,12 @@ class Game {
     
     // The method relating to the course of the game
     
-    func runGame() {
+    internal func runGame() {
         
         // Two players are created
         
-        let player1 = Player()
-        let player2 = Player()
+         let player1 = Player()
+         let player2 = Player()
         
         // Both players make up their team
         
@@ -95,7 +95,6 @@ class Game {
                 // The player choses an assailant
                 
                 assailant = player1.selectCharacter(in: team1)
-                
                 
                 // If the selected character is a magus, then the player choses a comrade to heal
                 
@@ -114,17 +113,14 @@ class Game {
                     opponent = player1.selectCharacter(in: team2)
                     fight()
                 }
-                
             } else {
-                
                 // When the health points of all characters is zero, the game ends and the opposing player wins
                 
-                if team1[0].life <= 0 && team1[1].life <= 0 && team1[2].life <= 0 {
+                if team1[0].life == 0 && team1[1].life == 0 && team1[2].life == 0 {
                     print("\(player2.playerName[0]) a gagné")
                     break
                 }
             }
-            
             
             if team2[0].life > 0 || team2[1].life > 0 || team2[2].life > 0 {
                 print("\(player2.playerName[0]) - Choisissez avec qui vous voulez jouer.")
@@ -143,7 +139,7 @@ class Game {
                     fight()
                 }
             } else {
-                if team2[0].life <= 0 && team2[1].life <= 0 && team2[2].life <= 0 {
+                if team2[0].life == 0 && team2[1].life == 0 && team2[2].life == 0 {
                     print("\(player1.playerName[0]) a gagné")
                     break
                 }

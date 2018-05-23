@@ -10,7 +10,7 @@ import Foundation
 
 // This class contains the methods and properties of the players
 
-class Player {
+internal class Player {
     var playerName: [String] = [] // The name the player will have chosen for himself
     var team: [Character] = [] // The team the player will have created for himself
     var teamName: [String] = [] // The name with which the player will have named his team
@@ -20,7 +20,7 @@ class Player {
     
     // The player names himself
     
-    func playerNamesHimSelf() {
+    fileprivate func playerNamesHimSelf() {
         
         if let yourName = readLine() {
             playerName.append(yourName)
@@ -29,7 +29,7 @@ class Player {
     }
     // The player names his team
     
-    func playerNamesHisTeam(){
+    fileprivate func playerNamesHisTeam(){
         
         if let yourTeam = readLine() {
             teamName.append(yourTeam)
@@ -39,7 +39,7 @@ class Player {
     
     // The player creates his team, choosing three characters in a list of five types of characters
     
-    func createTeam () -> [Character]  {
+    internal func createTeam () -> [Character]  {
         let characterType = ["combattant", "nain", "colosse", "mage", "Spectre"] // This property is used to enumerate the type of the characters before the player makes his choice
         var numberOfCharacter = 0
         
@@ -154,7 +154,7 @@ class Player {
  
     // This method summarizes the character's name and their type
     
-    func whatsMyTeam() {
+    fileprivate func whatsMyTeam() {
         print("Votre équipe est constituée de:")
         for i in 0...[team].count + 1{
             print("\(team[i].name) de type \(team[i].type.rawValue)")
@@ -164,7 +164,7 @@ class Player {
     
     // This is the method to choose a character for fighting or healing
     
-    func selectCharacter(in team: [Character]) -> Character {
+    internal func selectCharacter(in team: [Character]) -> Character {
         var selectedCharacter: Character?
         var validChoice = false
         var team = team

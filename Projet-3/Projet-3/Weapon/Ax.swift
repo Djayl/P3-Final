@@ -10,7 +10,7 @@ import Foundation
 
 // The ax is the weapon of the dwarf
 
-class Ax: Weapon{
+internal class Ax: Weapon{
     init() {
         super.init(damage: 25, cure: 0)
     }

@@ -10,7 +10,7 @@ import Foundation
 
 // The lightning is the weapon of the spectrum
 
-class Lightning: Weapon{
+internal class Lightning: Weapon{
     init() {
         super.init(damage: 150, cure : 0)
     }

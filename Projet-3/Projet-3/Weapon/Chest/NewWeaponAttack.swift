@@ -10,7 +10,7 @@ import Foundation
 
 // This weapon is in the chest that appears randomly for all the characters except the magus
 
-class NewWeaponAttack: Weapon {
+internal class NewWeaponAttack: Weapon {
     init() {
         super.init(damage: 50, cure: 0)
     }

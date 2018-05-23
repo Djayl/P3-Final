@@ -10,7 +10,7 @@ import Foundation
 
 // The mace is the weapon of the colossus
 
-class Mace: Weapon{
+internal class Mace: Weapon{
     init() {
         super.init(damage: 5, cure: 0)
     }
