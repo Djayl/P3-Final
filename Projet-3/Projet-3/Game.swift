@@ -13,12 +13,12 @@ import Foundation
 internal class Game {
     
     var selectedCharacter: Character? // The selected character is the one chosen fot the running of the game, fighting or healing
-    var opponent: Character? // The opponent is the one we're fighting
+    fileprivate var opponent: Character? // The opponent is the one we're fighting
     var team : Character? // The team the player will have created for himself
-    var assailant: Character? // The assailant is the one who is chosen to attack or heal
-    var comrade: Character? // The comrade is the one who is cured
-    var team1: [Character] = [] // This is the player 1's team
-    var team2: [Character] = [] // This is the player 2's team
+    fileprivate var assailant: Character? // The assailant is the one who is chosen to attack or heal
+    fileprivate var comrade: Character? // The comrade is the one who is cured
+    fileprivate var team1: [Character] = [] // This is the player 1's team
+    fileprivate var team2: [Character] = [] // This is the player 2's team
     static var names = [String]() // The names chosen by the players
     
     // This method checks whether the name is unique or not
@@ -116,7 +116,7 @@ internal class Game {
             } else {
                 // When the health points of all characters is zero, the game ends and the opposing player wins
                 
-                if team1[0].life == 0 && team1[1].life == 0 && team1[2].life == 0 {
+                if team1[0].life <= 0 && team1[1].life <= 0 && team1[2].life <= 0 {
                     print("\(player2.playerName[0]) a gagné")
                     break
                 }
@@ -139,7 +139,7 @@ internal class Game {
                     fight()
                 }
             } else {
-                if team2[0].life == 0 && team2[1].life == 0 && team2[2].life == 0 {
+                if team2[0].life <= 0 && team2[1].life <= 0 && team2[2].life <= 0 {
                     print("\(player1.playerName[0]) a gagné")
                     break
                 }

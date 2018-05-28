@@ -13,8 +13,8 @@ import Foundation
 internal class Player {
     var playerName: [String] = [] // The name the player will have chosen for himself
     var team: [Character] = [] // The team the player will have created for himself
-    var teamName: [String] = [] // The name with which the player will have named his team
-    var numberOfCharacter = 0 // This property is necessary for the method relating to the choice of characters and the creation of the team
+    fileprivate var teamName: [String] = [] // The name with which the player will have named his team
+    fileprivate var numberOfCharacter = 0 // This property is necessary for the method relating to the choice of characters and the creation of the team
     var selectedCharacter: Character? // The selected character is the one chosen fot the running of the game, fighting or healing
     
     
@@ -40,8 +40,8 @@ internal class Player {
     // The player creates his team, choosing three characters in a list of five types of characters
     
     internal func createTeam () -> [Character]  {
-        let characterType = ["combattant", "nain", "colosse", "mage", "Spectre"] // This property is used to enumerate the type of the characters before the player makes his choice
-        var numberOfCharacter = 0
+         let characterType = ["combattant", "nain", "colosse", "mage", "Spectre"] // This property is used to enumerate the type of the characters before the player makes his choice
+         var numberOfCharacter = 0
         
         
         print("Bonjour, entrez votre nom:")
