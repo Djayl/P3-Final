@@ -113,14 +113,14 @@ internal class Game {
                     opponent = player1.selectCharacter(in: team2)
                     fight()
                 }
-            } else {
+            }
                 // When the health points of all characters is zero, the game ends and the opposing player wins
                 
                 if team1[0].life <= 0 && team1[1].life <= 0 && team1[2].life <= 0 {
-                    print("\(player2.playerName[0]) a gagné")
+                    print("Félicitations \(player2.playerName[0]), vous avez gagné!")
                     break
                 }
-            }
+            
             
             if team2[0].life > 0 || team2[1].life > 0 || team2[2].life > 0 {
                 print("\(player2.playerName[0]) - Choisissez avec qui vous voulez jouer.")
@@ -138,12 +138,12 @@ internal class Game {
                     opponent = player2.selectCharacter(in: team1)
                     fight()
                 }
-            } else {
+            }
                 if team2[0].life <= 0 && team2[1].life <= 0 && team2[2].life <= 0 {
-                    print("\(player1.playerName[0]) a gagné")
+                    print("Félicitations \(player1.playerName[0]), vous avez gagné!")
                     break
                 }
-            }
+            
             
         } while (team1[0].life > 0 || team1[1].life > 0 || team1[2].life > 0) && (team2[0].life > 0 || team2[1].life > 0 || team2[2].life > 0)
     }
